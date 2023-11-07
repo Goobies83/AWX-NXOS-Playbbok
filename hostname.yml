@@ -1,9 +1,9 @@
 ---
 - name: Change Cisco Nexus switch hostname
-  hosts: nexus_switch
+  hosts: all
   gather_facts: no  # We don't need to gather facts for this task
   tasks:
-    - name: Set the hostname
-      cisco.nxos.nxos_system:
-        hostname: NXOX01-EXT01  # Replace with the new hostname you want
-      delegate_to: localhost  # Run the task on the Ansible control machine
+    cisco.ios.ios_hostname:
+    config:
+      hostname: NXOS-EXT01-01
+    state: merged

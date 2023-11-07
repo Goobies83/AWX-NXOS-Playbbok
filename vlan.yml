@@ -1,5 +1,6 @@
 ---
-- name: Merge provided configuration with device configuration.
+- name: Merge provided configuration with device configuration..
+  tasks:
   cisco.nxos.nxos_vlans:
     config:
     - vlan_id: 5

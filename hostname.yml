@@ -3,8 +3,7 @@
   hosts: all
   gather_facts: false
   tasks:
-   - name: Apply the provided configuration
-     cisco.ios.ios_hostname:
+   - name: Merge the provided configuration with the existing running configuration
+     cisco.nxos.nxos_hostname:
       config:
-        hostname: NXOS-EXT01-01
-      state: merged
+       hostname: NXOSv-9k

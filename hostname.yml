@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: no  # We don't need to gather facts for this task
   tasks:
-    cisco.ios.ios_hostname:
+    cisco.nxos.nxos_system_hostname:
     config:
       hostname: NXOS-EXT01-01
     state: merged

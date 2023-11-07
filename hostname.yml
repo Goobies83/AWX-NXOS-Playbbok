@@ -1,9 +1,10 @@
 ---
-- name: Change Cisco Nexus switch hostname
+- name: Change hostname
   hosts: all
-  gather_facts: no  # We don't need to gather facts for this task
+  gather_facts: false
   tasks:
+   - name: Apply the provided configuration
     cisco.nxos.nxos_system_hostname:
-    config:
-      hostname: NXOS-EXT01-01
-    state: merged
+     config:
+       hostname: NXOS-EXT01-01
+     state: merged

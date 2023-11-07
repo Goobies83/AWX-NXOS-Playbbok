@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: false
   tasks:
-   -name: Trunk
+   -name: Merge provided configuration with device configuration
     cisco.nxos.nxos_l2_interfaces:
       config:
       - name: Ethernet1/7

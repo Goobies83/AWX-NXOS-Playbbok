@@ -1,0 +1,16 @@
+---
+- name: Change Cisco NX-OS Hostname
+  hosts: cisco_nxos
+  gather_facts: no  # Disable gathering facts for network devices
+
+  tasks:
+    - name: Set the hostname
+      nxos_system:
+        hostname: "{{ new_hostname }}"
+      vars:
+        new_hostname: "NXOS01"  # Replace with the desired hostname
+      register: result
+
+    - name: Display the result
+      debug:
+        var: result

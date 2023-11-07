@@ -3,10 +3,13 @@
   hosts: all
   gather_facts: false
   tasks:
-  cisco.nxos.nxos_vlans:
+  cisco.nxos.nxos_l2_interfaces:
     config:
-    - vlan_id: 5
-      name: test-vlan5
-    - vlan_id: 10
-      enabled: false
+    - name: Ethernet1/7
+      trunk:
+        native_vlan: 10
+        allowed_vlans: 2,4,15
+    - name: Ethernet1/8
+      access:
+        vlan: 30
     state: merged

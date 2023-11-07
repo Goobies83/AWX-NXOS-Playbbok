@@ -1,5 +1,7 @@
 ---
-- name: Merge provided configuration with device configuration..
+- name: VLAN Config
+  hosts: all
+  gather_facts: false
   tasks:
   cisco.nxos.nxos_vlans:
     config:

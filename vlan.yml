@@ -1,0 +1,9 @@
+---
+- name: Merge provided configuration with device configuration.
+  cisco.nxos.nxos_vlans:
+    config:
+    - vlan_id: 5
+      name: test-vlan5
+    - vlan_id: 10
+      enabled: false
+    state: merged

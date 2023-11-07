@@ -7,14 +7,12 @@
      cisco.nxos.nxos_hostname:
       config:
        hostname: NXOSv-9k
-
-- name: Merge provided configuration with device configuration.
-  hosts: all
-  tasks: 
+   - name: Merge provided configuration with device configuration.
      cisco.nxos.nxos_vlans:
       config:
        - vlan_id: 5
          name: test-vlan5
        - vlan_id: 10
          enabled: false
-      state: merged
+       state: merged    
+  

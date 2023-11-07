@@ -1,5 +1,5 @@
 - name: Merge provided configuration with device configuration
-  cisco.nxos.nxos_l2_interfaces:
+  nxos_l2_interface::
     config:
     - name: Ethernet1/1
       trunk:

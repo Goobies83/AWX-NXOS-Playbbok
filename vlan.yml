@@ -3,13 +3,14 @@
   hosts: all
   gather_facts: false
   tasks:
-  cisco.nxos.nxos_l2_interfaces:
-    config:
-    - name: Ethernet1/7
-      trunk:
-        native_vlan: 10
-        allowed_vlans: 2,4,15
-    - name: Ethernet1/8
-      access:
-        vlan: 30
-    state: merged
+   -name: Trunk
+    cisco.nxos.nxos_l2_interfaces:
+      config:
+      - name: Ethernet1/7
+        trunk:
+          native_vlan: 10
+          allowed_vlans: 2,4,15
+      - name: Ethernet1/8
+        access:
+          vlan: 30
+      state: merged

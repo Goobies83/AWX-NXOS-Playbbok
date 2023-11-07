@@ -1,6 +1,6 @@
 ---
 - name: Change Cisco NX-OS Hostname
-  hosts: cisco_nxos
+  hosts: all
   gather_facts: no  # Disable gathering facts for network devices
 
   tasks:
